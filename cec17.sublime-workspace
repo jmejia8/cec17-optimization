@@ -1,0 +1,1437 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ma",
+				"matrix"
+			],
+			[
+				"st",
+				"start"
+			],
+			[
+				"S",
+				"STEP_P"
+			],
+			[
+				"see",
+				"seed"
+			],
+			[
+				"sper",
+				"sperms"
+			],
+			[
+				"di",
+				"diff"
+			],
+			[
+				"sho",
+				"showSperms\t(sperm.h)"
+			],
+			[
+				"print",
+				"printf\tprintf …"
+			],
+			[
+				"rand",
+				"randomm"
+			],
+			[
+				"rad",
+				"random\t(sperm.h)"
+			],
+			[
+				"spe",
+				"sperms"
+			],
+			[
+				"do",
+				"double"
+			],
+			[
+				"egg_",
+				"egg_x"
+			],
+			[
+				"egg",
+				"egg"
+			],
+			[
+				"e",
+				"egg_v"
+			],
+			[
+				"eg",
+				"egg_x"
+			],
+			[
+				"z",
+				"z-w"
+			],
+			[
+				"clas",
+				"class1"
+			],
+			[
+				"cla",
+				"class1"
+			],
+			[
+				"if",
+				"if\tIf Condition"
+			],
+			[
+				"Envi",
+				"Enviar\t(contacto.php)"
+			],
+			[
+				"bu",
+				"button\tTag"
+			],
+			[
+				"button",
+				"button"
+			],
+			[
+				"rici",
+				"recibido\t(index.php)"
+			],
+			[
+				"conta",
+				"contacto\t(index.php)"
+			],
+			[
+				"sub",
+				"subject"
+			],
+			[
+				"css",
+				"cssGreen"
+			],
+			[
+				"border",
+				"border-bottom\t(style.css)"
+			],
+			[
+				"is",
+				"isEmail"
+			],
+			[
+				"_",
+				"_GET"
+			],
+			[
+				"head",
+				"head\t(index.php)"
+			],
+			[
+				"ser",
+				"service\t(home.php)"
+			],
+			[
+				"s",
+				"script\tTag"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"sol",
+				"solid\t(style.css)"
+			],
+			[
+				"blo",
+				"block"
+			],
+			[
+				"med",
+				"method\tAttr"
+			],
+			[
+				"pa",
+				"page"
+			],
+			[
+				"tar",
+				"target\tAttr"
+			],
+			[
+				"hr",
+				"href\tAttr"
+			],
+			[
+				"web",
+				"web-designe"
+			],
+			[
+				"cont",
+				"contact\t(style.css)"
+			],
+			[
+				"dat",
+				"data"
+			],
+			[
+				"da",
+				"data"
+			],
+			[
+				"contac",
+				"contacto\t(paquetes.php)"
+			],
+			[
+				"paque",
+				"paquetes\t(home.php)"
+			],
+			[
+				"basic",
+				"basico\t(index.php)"
+			],
+			[
+				"ba",
+				"background-size"
+			],
+			[
+				"incl",
+				"include"
+			],
+			[
+				"inc",
+				"include"
+			],
+			[
+				"con",
+				"contact"
+			],
+			[
+				"lisst",
+				"list-style"
+			],
+			[
+				"tras",
+				"transition"
+			],
+			[
+				"but",
+				"button\t(index.html)"
+			],
+			[
+				"padd-",
+				"padding-top"
+			],
+			[
+				"rgba",
+				"rgba()"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"mat",
+				"margin-top"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"fons",
+				"font-size"
+			],
+			[
+				"bla",
+				"black-button\t(style.css)"
+			],
+			[
+				"w",
+				"white"
+			],
+			[
+				"min-",
+				"min-height"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"lin",
+				"links\tlink - stylesheet"
+			],
+			[
+				"edit",
+				"editores\t(update_author.php)"
+			],
+			[
+				"adm",
+				"admin_id"
+			],
+			[
+				"chan",
+				"changePassword\t(crearPost.js)"
+			],
+			[
+				"inp",
+				"input-medium"
+			],
+			[
+				"old",
+				"old_pass\t(change_password.php)"
+			],
+			[
+				"pass",
+				"pass\t(update_author.php)"
+			],
+			[
+				"IN",
+				"INTO\t(update_author.php)"
+			],
+			[
+				"coun",
+				"count\t(inicio.php)"
+			],
+			[
+				"row",
+				"rows\t(inicio.php)"
+			],
+			[
+				"sha",
+				"sha1\t(update_author.php)"
+			],
+			[
+				"new",
+				"new_pass"
+			],
+			[
+				"ret",
+				"ret0\treturn false"
+			],
+			[
+				"pas",
+				"password\t(editores.php)"
+			],
+			[
+				"send",
+				"sendMail\t(send_mail.php)"
+			],
+			[
+				"widt",
+				"width\t(inicio.php)"
+			],
+			[
+				"wid",
+				"width\t(inicio.php)"
+			],
+			[
+				"wh",
+				"width\t(inicio.php)"
+			],
+			[
+				"tem",
+				"template"
+			],
+			[
+				"templ",
+				"templateEmail"
+			],
+			[
+				"mse",
+				"message"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"al",
+				"alt\tAttr"
+			],
+			[
+				"fonts",
+				"font-size"
+			],
+			[
+				"ac",
+				"activo\t(inicio.php)"
+			],
+			[
+				"Editor",
+				"Editores"
+			],
+			[
+				"show",
+				"show_images.php\t(acciones.php)"
+			],
+			[
+				"styt",
+				"style='width:80\t(list_images.php)"
+			],
+			[
+				"que",
+				"query\t(eliminar.php)"
+			],
+			[
+				"ro",
+				"rows"
+			],
+			[
+				"coent",
+				"comentarios"
+			],
+			[
+				"admin",
+				"admin_id"
+			],
+			[
+				"sh",
+				"showMessage"
+			],
+			[
+				"delete",
+				"deleteComment"
+			],
+			[
+				"el",
+				"eliminado"
+			],
+			[
+				"admi",
+				"admin\t(inicio.php)"
+			],
+			[
+				"rt",
+				"ret0\treturn false"
+			],
+			[
+				"shw",
+				"showTopMessage"
+			],
+			[
+				"inli",
+				"inline-table"
+			],
+			[
+				"ex",
+				"ext"
+			],
+			[
+				"for",
+				"for\tfor …"
+			],
+			[
+				"fo",
+				"form"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"mes",
+				"message"
+			],
+			[
+				"sty",
+				"style\tAttr"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"upl",
+				"uploadFiles"
+			],
+			[
+				"up",
+				"upload_media.php\t(upload_media.php)"
+			],
+			[
+				"auth",
+				"author\t(cont-author.php)"
+			],
+			[
+				"marign",
+				"margin"
+			],
+			[
+				"textal",
+				"text-align"
+			],
+			[
+				"se",
+				"selected"
+			],
+			[
+				"sele",
+				"selected"
+			],
+			[
+				"ne",
+				"new"
+			],
+			[
+				"ehc",
+				"echo"
+			],
+			[
+				"styl",
+				"style='display:none"
+			],
+			[
+				"count",
+				"country"
+			],
+			[
+				"int",
+				"intval"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "main.cpp",
+			"settings":
+			{
+				"buffer_size": 1348,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "cec17_test_func.cpp",
+			"settings":
+			{
+				"buffer_size": 38819,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "ooo",
+			"settings":
+			{
+				"buffer_size": 3,
+				"line_ending": "Unix",
+				"name": "ooo"
+			}
+		},
+		{
+			"file": "/home/jesus/develop/repos/sperm-optimization/main.c",
+			"settings":
+			{
+				"buffer_size": 847,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				"PdfLaTeX"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 52.0,
+		"last_filter": "sidebar",
+		"selected_items":
+		[
+			[
+				"sidebar",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"sid",
+				"View: Toggle Side Bar"
+			],
+			[
+				"side",
+				"View: Toggle Side Bar"
+			],
+			[
+				"snip",
+				"Snippet: html"
+			],
+			[
+				"xm",
+				"Set Syntax: XML"
+			],
+			[
+				"pla",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"sude",
+				"Snippet: include …"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"ht",
+				"Set Syntax: HTML (Tcl)"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"shel",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"pyt",
+				"Set Syntax: Python"
+			],
+			[
+				"ssshe",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"she",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"sshe",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"aate",
+				"Set Syntax: LaTeX"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/jesus/Downloads/codes/C version"
+	],
+	"file_history":
+	[
+		"/home/jesus/Downloads/codes/C version/input_data/M_1_D2.txt",
+		"/home/jesus/develop/repos/sperm-optimization/main.c",
+		"/home/jesus/develop/repos/sperm-optimization/function.h",
+		"/home/jesus/develop/maestria/borrador_sperm_opt/main.tex",
+		"/home/jesus/develop/maestria/borrador_tesis_notes/main.tex",
+		"/home/jesus/develop/maestria/borrador_tesis/main.tex",
+		"/home/jesus/develop/maestria/machine_learning/tarea4_23beb17/main.tex",
+		"/home/jesus/develop/maestria/machine_learning/tarea3/datos/segmentation.arff",
+		"/home/jesus/develop/maestria/machine_learning/tarea4_23beb17/main.tex.bak",
+		"/home/jesus/develop/repos/sperm-optimization/tmp/tmp.py",
+		"/home/jesus/.config/sublime-text-3/Packages/User/LaTeXTools.sublime-settings",
+		"/home/jesus/.config/sublime-text-3/Packages/LaTeXTools/LaTeXTools.sublime-settings",
+		"/home/jesus/develop/repos/sperm-optimization/out.txt",
+		"/home/jesus/develop/repos/sperm-optimization/.gitignore",
+		"/home/jesus/develop/repos/sperm-optimization/tmp.py",
+		"/home/jesus/develop/repos/sperm-optimization/readme.md",
+		"/home/jesus/develop/repos/sperm-optimization/sperm.h",
+		"/etc/pm/config.d/modules",
+		"/home/jesus/develop/repos/jason/demos/big/b.asl",
+		"/home/jesus/Documents/weka-3-8-0/data/weather.nominal.arff",
+		"/home/jesus/.bashrc",
+		"/home/jesus/develop/repos/jason/demos/big/BEnv.java",
+		"/home/jesus/Downloads/seismic-bumps.arff",
+		"/home/jesus/programs/tarskiWorld7/TW-16_01-linux-x86_64-rpm-installer.sh",
+		"/home/jesus/programs/tarskiWorld7/pack.zip",
+		"/home/jesus/Documents/weka-3-8-0/data/iris.arff",
+		"/home/jesus/Downloads/data_banknote_authentication.arff",
+		"/home/jesus/develop/maestria/machine_learning/tarea3/datos/ecoli.arff",
+		"/home/jesus/develop/maestria/machine_learning/tarea3/datos/glass.arff",
+		"/home/jesus/develop/maestria/machine_learning/tarea3/datos/sonar.arff",
+		"/home/jesus/develop/maestria/machine_learning/tarea3/datos/seismic-bumps.arff",
+		"/home/jesus/develop/maestria/machine_learning/tarea3/datos/Occupancy-Detection.arff",
+		"/home/jesus/develop/repos/jason/src/test/java/test/BeliefBaseTest.java",
+		"/home/jesus/develop/maestria/machine_learning/tarea3/datos/datatraining.arff",
+		"/home/jesus/develop/maestria/machine_learning/tarea3/datos/isolet5.arff",
+		"/home/jesus/Documents/weka-3-8-0/data/segment-challenge.arff",
+		"/home/jesus/Documents/weka-3-8-0/data/ReutersGrain-test.arff",
+		"/home/jesus/develop/maestria/machine_learning/tarea3/datos/LSVT_voice_rehabilitation.csv",
+		"/home/jesus/.cache/.fr-dAr3aF/LSVT_feature_names.txt",
+		"/home/jesus/.cache/.fr-Qy2tU6/murphy/learn.list",
+		"/media/jesus/1352-A9F9/virus.exe.txt",
+		"/media/jesus/1352-A9F9/virus.exe",
+		"/home/jesus/develop/maestria/machine_learning/tarea1_7feb17/data/main.r",
+		"/home/jesus/Downloads/zoo.data",
+		"/home/jesus/Downloads/zoo.names",
+		"/home/jesus/Desktop/zoo.arff",
+		"/home/jesus/develop/maestria/machine_learning/tarea1_7feb17/data/main_iris.r",
+		"/home/jesus/Desktop/aaaa.arff",
+		"/usr/share/myspell/dicts/hyph_en_CA.dic",
+		"/usr/share/myspell/dicts/hyph_en_US.dic",
+		"/home/jesus/.cache/.fr-gQI6SF/es_ES/main.dic",
+		"/home/jesus/Documents/weka-3-8-0/data/segment-test.arff",
+		"/home/jesus/Documents/weka-3-8-0/data/vote.arff",
+		"/home/jesus/Desktop/iris.arff",
+		"/home/jesus/develop/maestria/machine_learning/tarea1_7feb17/main.py",
+		"/home/jesus/develop/maestria/machine_learning/tarea1_7feb17_/main.py",
+		"/var/www/canda2na.com/public_html/css/style.css",
+		"/var/www/canda2na.com/public_html/includes/paquetes.php",
+		"/var/www/canda2na.com/public_html/includes/contacto.php",
+		"/var/www/canda2na.com/public_html/action/send_email.php",
+		"/var/www/canda2na.com/public_html/.htaccess",
+		"/home/jesus/Downloads/breast-cancer-wisconsin.csv",
+		"/var/www/candaana/public_html/blog/blogcandaana.sql",
+		"/var/www/candaana/public_html/blog/instrucciones.php",
+		"/var/www/candaana/public_html/blog/comunes/config.ini",
+		"/var/www/canda2na.com/public_html/instrucciones.txt",
+		"/home/jesus/Downloads/drupal-8.2.5/.htaccess",
+		"/var/www/canda2na.com/public_html/action/send_contact_form.php",
+		"/var/www/canda2na.com/public_html/includes/head.php",
+		"/var/www/canda2na.com/public_html/includes/header.php",
+		"/var/www/canda2na.com/public_html/index.php",
+		"/var/www/canda2na.com/public_html/includes/home.php",
+		"/tmp/mozilla_jesus0/sitemap.xml",
+		"/home/jesus/Downloads/sitemap.xml",
+		"/var/www/candaana/public_html/blog/comunes/visit_counter.php",
+		"/var/www/candaana/public_html/blog/comunes/send_mail.php",
+		"/var/www/coursepage/public_html/js/main.js",
+		"/var/www/coursepage/public_html/index.php",
+		"/var/www/coursepage/public_html/js/slider.js",
+		"/var/www/coursepage/public_html/js/main.controller.js",
+		"/var/www/canda2na.com/public_html/data/json/paquetes.json",
+		"/home/jesus/.xsession-errors",
+		"/home/jesus/.cinnamon/glass.log",
+		"/home/jesus/Desktop/index.html",
+		"/var/www/canda2na.com/public_html/includes/footer.php",
+		"/var/www/canda2na.com/public_html/js/main.js",
+		"/etc/hosts",
+		"/etc/host",
+		"/etc/apache2/sites-available/cursos.canda2na.com.conf",
+		"/var/www/cursos.canda2na.com/public_html/config.php",
+		"/etc/apache2/sites-available/000-default.conf",
+		"/home/jesus/.cache/.fr-eLcUOD/httpd.conf",
+		"/home/jesus/Downloads/404.xcf",
+		"/etc/apache2/sites-available/canda2na.com.conf",
+		"/var/www/canda2na.com/public_html/includes/.htaccess",
+		"/var/www/coursepage/public_html/.htaccess",
+		"/home/jesus/develop/repos/candaana/css/style.css",
+		"/home/jesus/develop/repos/candaana/js/main.js",
+		"/home/jesus/develop/repos/candaana/index.html",
+		"/var/www/candaana/public_html/blog/admin/js/crearPost.js",
+		"/var/www/candaana/public_html/blog/admin/comunes/delete_comment.php",
+		"/home/jesus/Desktop/cases/index.html",
+		"/var/www/candaana/public_html/blog/admin/comunes/change_password.php",
+		"/var/www/candaana/public_html/blog/admin/login.php",
+		"/var/www/candaana/public_html/blog/admin/comunes/update_author.php",
+		"/var/www/coursepage/public_html/bin/add_comment.php",
+		"/var/www/candaana/public_html/blog/admin/editores.php",
+		"/var/www/candaana/public_html/blog/admin/redactar.php",
+		"/var/www/candaana/public_html/blog/contenido/cont-derecha.php",
+		"/var/www/candaana/public_html/blog/admin/inicio.php",
+		"/var/www/candaana/public_html/blog/admin/comunes/upload_media.php",
+		"/var/www/candaana/public_html/blog/admin/comunes/header.php",
+		"/var/www/candaana/public_html/blog/admin/upload_images.php",
+		"/var/www/candaana/public_html/blog/admin/comunes/head.php",
+		"/var/www/candaana/public_html/blog/admin/show_images.php",
+		"/var/www/candaana/public_html/blog/admin/comunes/eliminar.php",
+		"/var/www/candaana/public_html/blog/admin/comunes/acciones.php",
+		"/var/www/candaana/public_html/blog/tmp.php",
+		"/var/www/candaana/public_html/blog/admin/comunes/list_images.php",
+		"/var/www/candaana/public_html/blog/comunes/header.php",
+		"/var/www/candaana/public_html/blog/css/style2.css",
+		"/var/www/candaana/public_html/blog/contenido/cont-buscar.php",
+		"/var/www/candaana/public_html/blog/contenido/post_solo.php",
+		"/var/www/candaana/public_html/blog/comunes/caja_post.php",
+		"/var/www/candaana/public_html/blog/contenido/cont-author.php",
+		"/var/www/candaana/public_html/blog/author.php",
+		"/tmp/mozilla_jesus0/social.sql",
+		"/var/www/candaana/public_html/blog/action/buscar.php"
+	],
+	"find":
+	{
+		"height": 21.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"abs(",
+			"Lf",
+			"int",
+			"i = 0",
+			"N",
+			"i",
+			"\t\n",
+			"2",
+			"100",
+			"t-1",
+			"folder",
+			"build",
+			"xreader",
+			"options",
+			".999",
+			"9999",
+			"999",
+			"9999",
+			"999925003",
+			"9999",
+			"999",
+			"999925003",
+			"3.",
+			"1.354559",
+			"3.1415942",
+			"0",
+			"532943",
+			"150283",
+			"731405",
+			"878684641",
+			"000000126",
+			"682731",
+			"004636",
+			"1.",
+			"3.",
+			"3",
+			"));\n",
+			"xx",
+			"h",
+			"761068",
+			"202175",
+			"v",
+			"float",
+			"dim",
+			";\n",
+			"\t\n",
+			"int ",
+			"star",
+			"velocidad",
+			"float",
+			"np.",
+			"pow",
+			"pi",
+			"cos",
+			"linspace",
+			"array",
+			"]",
+			"  \t ",
+			"sperm",
+			"a1",
+			"a",
+			",",
+			"\"",
+			"continuous.",
+			"attributes",
+			",",
+			"\n",
+			"nominal",
+			"\n",
+			" ",
+			"  ",
+			"    ",
+			"   ",
+			" ",
+			"+",
+			"\n",
+			"bolean",
+			"Boolean",
+			"\n",
+			". ",
+			"mz",
+			"u",
+			"y",
+			"i, p",
+			"i, col",
+			"x",
+			"row",
+			"Iris-",
+			"\"Umbrales:\"",
+			"[1]",
+			".000",
+			"\\\\ \\hline",
+			"1.000",
+			"\"Medias:\"",
+			"[1]",
+			"\\\\ \\hline",
+			"& [",
+			"\\\\ \\hline",
+			"\"Umbrales:\"",
+			"[1]",
+			"$",
+			"Umbrales:",
+			"Medias:",
+			"\"",
+			"[1]",
+			"my_data[row, p] == ",
+			",",
+			"1102573",
+			"1047630",
+			"1002945",
+			"1000025",
+			"Ãº",
+			"Jesdds",
+			"Ãº",
+			"=",
+			"\n",
+			"name",
+			"email",
+			"Email",
+			"email",
+			"name",
+			"básico",
+			"name",
+			"20px",
+			"page=",
+			"button",
+			"<p>Lorem",
+			"canda2na"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1348,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1348,
+								1348
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "cec17_test_func.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 38819,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4760,
+								4760
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 858.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3,
+								3
+							]
+						],
+						"settings":
+						{
+							"auto_name": "ooo",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/jesus/develop/repos/sperm-optimization/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 847,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 255.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 132.0
+	},
+	"pinned_build_system": "",
+	"project": "cec17.sublime-project",
+	"replace":
+	{
+		"height": 38.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/develop/maestria/machine_learning/tarea1_7feb17/main.py"
+			],
+			[
+				"in",
+				"index.php"
+			],
+			[
+				"head",
+				"includes/head.php"
+			],
+			[
+				"con",
+				"includes/contacto.php"
+			],
+			[
+				"hea",
+				"includes/header.php"
+			],
+			[
+				"home",
+				"includes/home.php"
+			],
+			[
+				"edi",
+				"admin/editores.php"
+			],
+			[
+				"jq",
+				"admin/src/jquery.wysiwyg.js"
+			],
+			[
+				"jque",
+				"admin/src/jquery.wysiwyg.css"
+			],
+			[
+				"s",
+				"css/style2.css"
+			],
+			[
+				"js",
+				"admin/js/crearPost.js"
+			],
+			[
+				"visi",
+				"comunes/visit_counter.php"
+			],
+			[
+				"foot",
+				"comunes/footer.php"
+			],
+			[
+				"pos",
+				"contenido/post_solo.php"
+			],
+			[
+				"cont",
+				"contenido/cont-izquierda.php"
+			],
+			[
+				"sty",
+				"css/style2.css"
+			],
+			[
+				"h",
+				"comunes/head.php"
+			],
+			[
+				"dere",
+				"contenido/cont-derecha.php"
+			],
+			[
+				"coniz",
+				"contenido/cont-izquierda.php"
+			],
+			[
+				"he",
+				"comunes/head.php"
+			],
+			[
+				"inde",
+				"index.php"
+			],
+			[
+				"ini",
+				"admin/inicio.php"
+			],
+			[
+				"lo",
+				"admin/login.php"
+			],
+			[
+				"etiqu",
+				"contenido/etiquetas.php"
+			],
+			[
+				"post",
+				"post.php"
+			],
+			[
+				"bus",
+				"buscar.php"
+			],
+			[
+				"conbus",
+				"contenido/cont-buscar.php"
+			],
+			[
+				"busc",
+				"buscar.php"
+			],
+			[
+				"come",
+				"action/crear_comentario.php"
+			],
+			[
+				"com",
+				"js/comentar.js"
+			],
+			[
+				"cnde",
+				"contenido/cont-derecha.php"
+			],
+			[
+				"addc",
+				"bin/add_comment.php"
+			],
+			[
+				"css",
+				"css/main.css"
+			],
+			[
+				"ang",
+				"js/angular.min.js"
+			],
+			[
+				"main",
+				"js/main.controller.js"
+			],
+			[
+				"main.",
+				"css/main.css"
+			],
+			[
+				"add",
+				"bin/add_course.php"
+			],
+			[
+				"ma",
+				"css/main.css"
+			],
+			[
+				"course",
+				"includes/course.php"
+			],
+			[
+				"ind",
+				"index.php"
+			],
+			[
+				"ima",
+				"image.php"
+			],
+			[
+				"navi",
+				"includes/navigation.php"
+			],
+			[
+				"courses",
+				"includes/courses.php"
+			],
+			[
+				"man.",
+				"js/main.js"
+			],
+			[
+				"cour",
+				"bin/list_my_courses.php"
+			],
+			[
+				"na",
+				"includes/navigation.php"
+			],
+			[
+				"micss",
+				"css/main.css"
+			],
+			[
+				"chap",
+				"bin/load_course_chapter.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 165.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
