@@ -7,9 +7,12 @@
 // #include <WINDOWS.H>    
 #include <stdio.h>
 #include <math.h>
-#include <malloc.h>
+#include <stdlib.h>
+#include <time.h>
 
 #include "cec17_test_func.cpp"
+#include "tools.hpp"
+#include "optim.hpp"
 
 
 // void cec17_test_func(double *, double *,int,int,int);
@@ -20,14 +23,29 @@ int ini_flag=0,n_flag,func_flag,*SS;
 
 int main()
 {
-	int i,j,k,n,m,func_num;
+	int i,j,k,n,m,func_num,iter;
 	double *f,*x;
 	FILE *fpt;
 	char FileName[30];
-	m=2;
-	n=10;
-	x=(double *)malloc(m*n*sizeof(double));
-	f=(double *)malloc(sizeof(double)  *  m);
+
+	// population
+	m = 100;
+
+	// dimension
+	n = 10;
+
+	// iteration number
+	iter = 1000;
+
+	x = allocSperms(m, n);
+	f = allocSperms(m, 1);
+
+	setSpermsPosition(x, n, m);
+	evaluateSperms(x, f, n, m, 1);
+	
+	optim(x, f, m, n, 1, iter);
+	return 0;
+
 	for (i = 0; i < 30; i++)
 	{
 		func_num=i+1;
