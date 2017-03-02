@@ -46,11 +46,8 @@ int main()
 	setSpermsPosition(x, m, n);
 	evaluateSperms(x, f, m, n, func_num);
 
-	for (int i = 0; i < m; ++i) {
-		printf("%lf\t", f[i]);
-	}
-
 	optim(x, f, m, n, func_num, iter);
+	printSperms(x, f, m, n);
 
 	free(x);
 	free(f);

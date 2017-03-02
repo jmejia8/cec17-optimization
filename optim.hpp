@@ -1,16 +1,15 @@
 // Porcentaje de la longitud del paso por interación
-#define STEP_P 1e-6
-#define H 1e-6
+#define C_1		1e-7
+#define H 		1e-8
+#define C_2		1e-2
 
 double partial (double* x, int sperm, int xi, int n, int func_num){
 	int i, m = 2;
 	double* x_tmp = allocSperms(m, n);
 	double* f_tmp = allocSperms(m, 1);
 
-	int a = sperm;
-
 	for (i = 0; i < n; ++i){
-		x_tmp[i] = x[a + i];
+		x_tmp[i] = x[sperm + i];
 		x_tmp[n + i] = x_tmp[i];
 	}
 
@@ -39,11 +38,11 @@ void nextPosition (double* x, int sperm, int egg, int n, int func_num, int iter)
 
 		df = partial(x, sperm, i, n, func_num);
 
-		x[sperm + i] += STEP_P * df;
+		x[sperm + i] += C_1 * df;
 
-		// if (iter > 10) {
-		// 	x[sperm + i]  += 0.1*(x[egg + i] - x[sperm + i]);
-		// }
+		if (iter > 50) {
+			x[sperm + i]  += C_2*(x[egg + i] - x[sperm + i]);
+		}
 	}
 
 }
@@ -67,7 +66,7 @@ void optim(double* x, double* f, int m,  int n, int func_num, int iter) {
 	int old = -1;
 
 	printf("iter \t egg \t f_val\n");
-	printf("---------------------------------------\n");
+	printf("-------------------------------------------\n");
 	for (i = 0; i < iter; ++i) {
 		egg = iterate(x, f, egg, m, n, func_num, i);
 		if (egg != old) {
@@ -75,13 +74,6 @@ void optim(double* x, double* f, int m,  int n, int func_num, int iter) {
 		}
 
 		old = egg;
-	}
-
-	egg *= n;
-	printf("\n\n_------------------------------------------\n");
-	for (int i = 0; i < n; ++i)
-	{
-		printf("%lf\n", x[egg + i]);
 	}
 
 }

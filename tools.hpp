@@ -33,3 +33,14 @@ double evaluateSperms(double* x, double* f, int m, int n, int func_num){
 	for (i = 0; i < m*n; ++i)
 		cec17_test_func(x, f, n, m, func_num);
 }
+
+void printSperms(double* x, double* f, int m, int n){
+	int i, j;
+	for (i = 0; i < m; ++i) {
+		printf(">>>>  v = %lf\n", f[i]);
+		for (j = 0; j < n; ++j) {
+			printf("%lf \t", x[n*i + j]);
+		}
+		printf("\n=================================================\n");
+	}
+}
