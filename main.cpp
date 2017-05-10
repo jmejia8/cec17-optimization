@@ -12,7 +12,7 @@
 
 #include "cec17_test_func.cpp"
 #include "tools.hpp"
-#include "optim.hpp"
+#include "optim_mass.hpp"
 
 
 // void cec17_test_func(double *, double *,int,int,int);
@@ -26,16 +26,15 @@ int main()
 	int i,j,k,n,m,func_num,iter;
 	double *f,*x;
 	FILE *fpt;
-	char FileName[30];
 
 	// population
 	m = 100;
 
 	// dimension
-	n = 10;
+	n = 30;
 
 	// iteration number
-	iter = 10000;
+	iter = 10000 * n;
 
 	// function number
 	func_num = 1;
@@ -46,8 +45,9 @@ int main()
 	setSpermsPosition(x, m, n);
 	evaluateSperms(x, f, m, n, func_num);
 
+	printf("inicia lo chido\n");
 	optim(x, f, m, n, func_num, iter);
-	printSperms(x, f, m, n);
+	// printSperms(x, f, 10, n);
 
 	free(x);
 	free(f);
