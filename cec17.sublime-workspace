@@ -4,6 +4,70 @@
 		"selected_items":
 		[
 			[
+				"fun",
+				"func"
+			],
+			[
+				"ce",
+				"cec17_test_func"
+			],
+			[
+				"C_",
+				"C_2"
+			],
+			[
+				"c_",
+				"c_1"
+			],
+			[
+				"ra",
+				"randm\t(tools.hpp)"
+			],
+			[
+				"sper",
+				"sperm"
+			],
+			[
+				"lo",
+				"log\t(cec17_test_func.cpp)"
+			],
+			[
+				"iter",
+				"iter"
+			],
+			[
+				"x",
+				"x_tmp"
+			],
+			[
+				"spe",
+				"sperm"
+			],
+			[
+				"dl",
+				"double"
+			],
+			[
+				"pop",
+				"pop_size"
+			],
+			[
+				"rand",
+				"randm"
+			],
+			[
+				"rad",
+				"RADIUOS"
+			],
+			[
+				"sperm",
+				"sperms\t(main.c)"
+			],
+			[
+				"op",
+				"optim\t(optim.hpp)"
+			],
+			[
 				"ma",
 				"matrix"
 			],
@@ -20,10 +84,6 @@
 				"seed"
 			],
 			[
-				"sper",
-				"sperms"
-			],
-			[
 				"di",
 				"diff"
 			],
@@ -34,18 +94,6 @@
 			[
 				"print",
 				"printf\tprintf …"
-			],
-			[
-				"rand",
-				"randomm"
-			],
-			[
-				"rad",
-				"random\t(sperm.h)"
-			],
-			[
-				"spe",
-				"sperms"
 			],
 			[
 				"do",
@@ -466,54 +514,6 @@
 			[
 				"arra",
 				"array"
-			],
-			[
-				"upl",
-				"uploadFiles"
-			],
-			[
-				"up",
-				"upload_media.php\t(upload_media.php)"
-			],
-			[
-				"auth",
-				"author\t(cont-author.php)"
-			],
-			[
-				"marign",
-				"margin"
-			],
-			[
-				"textal",
-				"text-align"
-			],
-			[
-				"se",
-				"selected"
-			],
-			[
-				"sele",
-				"selected"
-			],
-			[
-				"ne",
-				"new"
-			],
-			[
-				"ehc",
-				"echo"
-			],
-			[
-				"styl",
-				"style='display:none"
-			],
-			[
-				"count",
-				"country"
-			],
-			[
-				"int",
-				"intval"
 			]
 		]
 	},
@@ -523,9 +523,18 @@
 			"file": "main.cpp",
 			"settings":
 			{
-				"buffer_size": 1348,
+				"buffer_size": 914,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "optim.hpp",
+			"settings":
+			{
+				"buffer_size": 1964,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -538,26 +547,34 @@
 			}
 		},
 		{
-			"contents": "ooo",
+			"file": "tools.hpp",
 			"settings":
 			{
-				"buffer_size": 3,
-				"line_ending": "Unix",
-				"name": "ooo"
-			}
-		},
-		{
-			"file": "/home/jesus/develop/repos/sperm-optimization/main.c",
-			"settings":
-			{
-				"buffer_size": 847,
+				"buffer_size": 879,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/Java/JavaC.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/Java/Ant.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JavaC.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Java/JavaC.sublime-build",
+				""
+			]
+		],
 		[
 			[
 				[
@@ -627,7 +644,7 @@
 	"command_palette":
 	{
 		"height": 52.0,
-		"last_filter": "sidebar",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -736,12 +753,20 @@
 	},
 	"expanded_folders":
 	[
-		"/home/jesus/Downloads/codes/C version"
+		"/home/jesus/develop/repos/cec17"
 	],
 	"file_history":
 	[
-		"/home/jesus/Downloads/codes/C version/input_data/M_1_D2.txt",
+		"/home/jesus/.cache/.fr-2DJOsZ/PrimerProyecto/PrimeraClase.java",
+		"/home/jesus/.cache/.fr-HDtPLS/c/main.c",
+		"/home/jesus/.cache/.fr-2uYUFO/c/cec15_test_func.c",
+		"/home/jesus/.cache/.fr-QhGYwM/MVMO_expensive_optimization/mvmo_1_10.txt",
 		"/home/jesus/develop/repos/sperm-optimization/main.c",
+		"/home/jesus/develop/repos/cec17/readme.txt",
+		"/home/jesus/develop/repos/cec17/cec17_test_func.cpp",
+		"/home/jesus/develop/repos/sperm-optimization/sperm.h",
+		"/home/jesus/develop/repos/cec17/.gitignore",
+		"/home/jesus/Downloads/codes/C version/input_data/M_1_D2.txt",
 		"/home/jesus/develop/repos/sperm-optimization/function.h",
 		"/home/jesus/develop/maestria/borrador_sperm_opt/main.tex",
 		"/home/jesus/develop/maestria/borrador_tesis_notes/main.tex",
@@ -756,7 +781,6 @@
 		"/home/jesus/develop/repos/sperm-optimization/.gitignore",
 		"/home/jesus/develop/repos/sperm-optimization/tmp.py",
 		"/home/jesus/develop/repos/sperm-optimization/readme.md",
-		"/home/jesus/develop/repos/sperm-optimization/sperm.h",
 		"/etc/pm/config.d/modules",
 		"/home/jesus/develop/repos/jason/demos/big/b.asl",
 		"/home/jesus/Documents/weka-3-8-0/data/weather.nominal.arff",
@@ -860,14 +884,7 @@
 		"/var/www/candaana/public_html/blog/tmp.php",
 		"/var/www/candaana/public_html/blog/admin/comunes/list_images.php",
 		"/var/www/candaana/public_html/blog/comunes/header.php",
-		"/var/www/candaana/public_html/blog/css/style2.css",
-		"/var/www/candaana/public_html/blog/contenido/cont-buscar.php",
-		"/var/www/candaana/public_html/blog/contenido/post_solo.php",
-		"/var/www/candaana/public_html/blog/comunes/caja_post.php",
-		"/var/www/candaana/public_html/blog/contenido/cont-author.php",
-		"/var/www/candaana/public_html/blog/author.php",
-		"/tmp/mozilla_jesus0/social.sql",
-		"/var/www/candaana/public_html/blog/action/buscar.php"
+		"/var/www/candaana/public_html/blog/css/style2.css"
 	],
 	"find":
 	{
@@ -885,6 +902,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Macarena",
+			"func(",
+			"func",
+			"cec17_test_func",
+			"abs(t)",
+			"80",
+			"int ",
+			"i",
+			"iniciando",
+			"printf",
 			"abs(",
 			"Lf",
 			"int",
@@ -1002,17 +1029,7 @@
 			"=",
 			"\n",
 			"name",
-			"email",
-			"Email",
-			"email",
-			"name",
-			"básico",
-			"name",
-			"20px",
-			"page=",
-			"button",
-			"<p>Lorem",
-			"canda2na"
+			"email"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1040,31 +1057,68 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1348,
+						"buffer_size": 914,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1348,
-								1348
+								530,
+								530
 							]
 						],
 						"settings":
 						{
+							"git_gutter_enabled": true,
 							"syntax": "Packages/C++/C++.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 156.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
 				{
 					"buffer": 1,
+					"file": "optim.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								929,
+								929
+							]
+						],
+						"settings":
+						{
+							"git_gutter_enabled": true,
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 156.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "cec17_test_func.cpp",
 					"semi_transient": false,
 					"settings":
@@ -1076,8 +1130,38 @@
 						"selection":
 						[
 							[
-								4760,
-								4760
+								5070,
+								5070
+							]
+						],
+						"settings":
+						{
+							"git_gutter_enabled": true,
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 819.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "tools.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 879,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								463,
+								463
 							]
 						],
 						"settings":
@@ -1086,67 +1170,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 858.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3,
-								3
-							]
-						],
-						"settings":
-						{
-							"auto_name": "ooo",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/home/jesus/develop/repos/sperm-optimization/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 847,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1169,11 +1196,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.485365853659,
 			1.0
 		],
 		"rows":
@@ -1185,7 +1219,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 255.0
+		"height": 88.0
 	},
 	"output.find_results":
 	{
@@ -1409,6 +1443,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/develop/repos/n-queens-ea/n-queens-ea.sublime-project"
+			],
+			[
+				"quee",
+				"~/develop/repos/n-queens-ea/n-queens-ea.sublime-project"
+			]
 		],
 		"width": 380.0
 	},
