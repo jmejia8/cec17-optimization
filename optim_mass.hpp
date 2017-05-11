@@ -41,16 +41,17 @@ void my_center(double* center,
 				 	int  dimension)
 {
 	int i, j, k;
-	double value, M, mass = 0;
+	double value, M, m, mass = 0, a;
 
 
 	zeros(center, dimension);
 
-	M = 2 * maximum(fitness, pop_size);
+	M =  maximum(fitness, pop_size);
+	m =  minimum(fitness, pop_size);
 
 	for (i = 0; i < subpop_size; ++i) {
-		
-		value = M - fitness[sub_population[i]];
+		a = (fitness[sub_population[i]] - m) / (M - m);
+		value = 1 - a;
 		mass += value;
 		k     = dimension*sub_population[i];
 
@@ -89,6 +90,12 @@ void gen_child(double* child,
 
 		// important mutation
 		child[i] = x + a * (c - r);
+
+		if (fabs(child[i]) > 100) {
+			while (fabs(child[i]) >= 100){
+				child[i] /= 2.0;
+			}
+		}
 	}
 
 }
@@ -100,7 +107,7 @@ void show_best(double* population, double* fitness, int pop_size, int dimension)
 			mi = i;
 	}
 
-	printf(">>>>  v = %lg \t  mean = %lg \n", fitness[mi], mean(fitness, pop_size));
+	printf(">>>>  v = %.8lf \t  mean = %lg \n", fitness[mi], mean(fitness, pop_size));
 
 	mi *= dimension;
 	for (i = 0; i < dimension; ++i) {
@@ -123,8 +130,8 @@ void optim(double* population, double* fitness, int pop_size,  int dimension, in
 	// experimental
 	int saves[pop_size];
 
-	for (t = 0; t < max_iter && evals < 300000; ++t) {
-		printf("\niter = %d \n", t);
+	for (t = 0; evals < 10000*dimension; ++t) {
+		printf("\niter = %d \t", t);
 		printf("evals  = %d\n", evals);
 		show_best(population, fitness, pop_size, dimension);
 
@@ -151,16 +158,6 @@ void optim(double* population, double* fitness, int pop_size,  int dimension, in
 					  SUB_POPULATION,
 					  dimension);
 
-			// if (t == 100)
-			// {
-				
-			// 	for (int j = 0; j < SUB_POPULATION; ++j)
-			// 	{
-			// 		printf("%d, ", sub_population[j]);
-			// 	}
-
-			// 	exit(0);
-			// }
 
 			myfunc(child, fitness_child, dimension, 1, func_num);
 
@@ -176,15 +173,14 @@ void optim(double* population, double* fitness, int pop_size,  int dimension, in
 
 		}
 
-		// printf("\n===================>  mios = %d\n", children_counter);
 		// Replace
 		int order[pop_size];
 		order_desc(order, fitness, pop_size);
-		for (int i = 0; i < children_counter; ++i)
+		for (i = 0; i < children_counter; ++i)
 		{
 			if (fit_children[i] < fitness[order[i]])
 			{
-				for (int j = 0; j < dimension; ++j) {
+				for (j = 0; j < dimension; ++j) {
 					population[order[i]*dimension + j] = children[i*dimension + j];
 				}
 

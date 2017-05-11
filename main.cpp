@@ -23,6 +23,7 @@ int ini_flag=0,n_flag,func_flag,*SS;
 
 int main()
 {
+	srand(time(NULL));
 	int i,j,k,n,m,func_num,iter;
 	double *f,*x;
 	FILE *fpt;
@@ -31,13 +32,13 @@ int main()
 	m = 100;
 
 	// dimension
-	n = 30;
+	n = 10;
 
 	// iteration number
 	iter = 10000 * n;
 
 	// function number
-	func_num = 1;
+	func_num = 14;
 
 	x = allocSperms(m, n);
 	f = allocSperms(m, 1);
@@ -45,7 +46,15 @@ int main()
 	setSpermsPosition(x, m, n);
 	evaluateSperms(x, f, m, n, func_num);
 
-	printf("inicia lo chido\n");
+	// for (int i = 0; i < m; ++i)
+	// {
+	// 	printf("%lg\n ", f[i]);
+	// }
+
+	// printf("\n");
+	// exit(0);
+
+	// return 0;
 	optim(x, f, m, n, func_num, iter);
 	// printSperms(x, f, 10, n);
 

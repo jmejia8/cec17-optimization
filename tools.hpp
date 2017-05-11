@@ -1,19 +1,14 @@
 #ifndef RADIUOS
-	#define RADIUOS 100
+	#define RADIUOS 10
 #endif
 
-int seed = 7;
 
 double randm() {
-	srand(time(NULL) + seed );
-	seed = rand();
-    return (double)seed / (double)RAND_MAX ;
+    return (double) rand() / (double)RAND_MAX ;
 }
 
 int randint() {
-	srand(time(NULL) + seed );
-	seed = rand();
-    return seed;
+    return rand();
 }
 
 
@@ -61,6 +56,19 @@ double maximum(double* list, int list_size) {
 
 	return M;
 }
+
+double minimum(double* list, int list_size) {
+	int i;
+	double M = list[0];
+	for ( i = 1; i < list_size; ++i) {
+		if (list[i] < M)
+			M = list[i];
+	}
+
+	return M;
+}
+
+
 
 void zeros(double* list, int list_size){
 	int i;
