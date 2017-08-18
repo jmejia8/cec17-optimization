@@ -1,10 +1,12 @@
 #ifndef RADIUOS
-	#define RADIUOS 10
+	#define RADIUOS 100
 #endif
+
+FILE* divs;
 
 
 double randm() {
-    return (double) rand() / (double)RAND_MAX ;
+    return ( (double) rand() ) / ( (double) RAND_MAX ) ;
 }
 
 int randint() {
@@ -102,4 +104,84 @@ void order_desc(int* order, double* data, int data_len){
 			}
 		}
 	}
+}
+
+double distance(double* population, int pop_size, int dimension, int x1, int x2){
+	double d = 0.0;
+	int i, j;
+
+	x1 *= dimension;
+	x2 *= dimension;
+
+	for (int i = 0; i < dimension; ++i) {
+		d += pow(population[x1 + i] - population[x2 + i], 2);
+	}
+
+	return sqrt(d);
+}
+
+double diversity(double* x, int pop_size, int dimension){
+	double LP = sqrt(dimension) * 2 * RADIUOS * pop_size;
+	int i;
+
+
+	double* xmean = allocSperms(dimension, 1);
+	zeros(xmean, dimension);
+
+	for (int i = 0; i < pop_size; ++i) {
+		int index = i * dimension;
+		for (int j = 0; j < dimension; ++j) {
+			// index += j;
+			xmean[j] += x[index + j] ;
+		}
+	}
+
+	for (int i = 0; i < dimension; ++i){
+		xmean[i] /= pop_size;
+		// printf("%lf, ", xmean[i]);
+	}
+
+	// printf("\ndmean = %lf\n", mean(xmean, dimension));
+
+	// printf("\n====================\n");
+
+
+
+	double d = 0;
+
+	for (int i = 0; i < pop_size; ++i) {
+		double distance = 0;
+		int index = i * dimension;
+		for (int j = 0; j < dimension; ++j) {
+			// index  j;
+			distance +=  pow(x[index + j] - xmean[j], 2) ;
+		}
+
+		d += sqrt(distance);
+
+		// printf("\n>>> dist%lf\n", sqrt(distance));
+	}
+
+	// printf("\n>>> dist ===  %lf\n", d);
+
+
+	free(xmean);
+
+	return  d / pop_size;
+
+}
+
+double DALL(double* x, int pop_size, int dimension){
+	double d = 0.0;
+	double LP = sqrt(dimension) * 2 * RADIUOS * pop_size;
+
+	int i, j;
+
+	for (int i = 0; i < pop_size; ++i) {
+		for (int j = 0; j < pop_size; ++j) {
+			d += distance(x, pop_size, dimension, i, j);
+		}
+	}
+
+	return d /(pop_size * pop_size);
 }

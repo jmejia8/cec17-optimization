@@ -21,24 +21,23 @@ double *OShift,*M,*y,*z,*x_bound;
 int ini_flag=0,n_flag,func_flag,*SS;
 
 
-int main()
+int run(int myf, int dimension) 
 {
-	srand(time(NULL));
 	int i,j,k,n,m,func_num,iter;
 	double *f,*x;
 	FILE *fpt;
 
-	// population
-	m = 100;
-
 	// dimension
-	n = 10;
+	n = dimension;
+
+	// population
+	m = SUB_POPULATION * n;
 
 	// iteration number
 	iter = 10000 * n;
 
 	// function number
-	func_num = 14;
+	func_num = myf;
 
 	x = allocSperms(m, n);
 	f = allocSperms(m, 1);
@@ -57,16 +56,33 @@ int main()
 	// return 0;
 	optim(x, f, m, n, func_num, iter);
 	// printSperms(x, f, 10, n);
+	// show_best(x, f, m, n);
+
 
 	free(x);
 	free(f);
-	free(y);
-	free(z);
-	free(M);
-	free(OShift);
-	free(x_bound);
+	// free(y);
+	// free(z);
+	// free(M);
+	// free(OShift);
+	// free(x_bound);
 
 	return 0;
 }
 
 
+
+int main(int argc, char const *argv[])
+{
+	srand(time(NULL));
+
+	int dimension = 2;
+	int i;
+	for (int i = 1; i <= 30; ++i) {
+		printf("Function = %d \t dimension = %d\n", i, dimension);
+		run(i, dimension);
+		evals = 0;
+		
+	}
+	return 0;
+}

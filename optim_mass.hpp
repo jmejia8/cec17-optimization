@@ -3,6 +3,7 @@
 #endif
 
 int evals = 0;
+double myError;
 
 void myfunc(double *x, double *f, int nx, int mx, int func_num){
 	// nx; dimesion
@@ -32,6 +33,15 @@ void gen_subpopulation(int* items, int item_size, int pop_size){
 	}
 }
 
+double masa (double x, double m, double M){
+	// if (abs(M - m) < 1e-8)
+	// 	return randm();
+
+	// return  1 -  (x - m) / (M - m);
+
+	return M - x;
+}
+
 void my_center(double* center,
 				 double* population, 
 					int* sub_population, 
@@ -50,8 +60,12 @@ void my_center(double* center,
 	m =  minimum(fitness, pop_size);
 
 	for (i = 0; i < subpop_size; ++i) {
-		a = (fitness[sub_population[i]] - m) / (M - m);
-		value = 1 - a;
+		// a = (fitness[sub_population[i]] - m) / (M - m);
+		a = fitness[sub_population[i]];
+		value = masa(a, m, M);
+		// a = 1. + (double) (order[i]);
+		// value = a;
+
 		mass += value;
 		k     = dimension*sub_population[i];
 
@@ -72,7 +86,7 @@ void gen_child(double* child,
 			      int  parent,
 			      int pop_size,
 			      int subpop_size,
-			      int dimension)
+			      int dimension, int gen)
 {
 	int i;
 	double x, c, r, a ;
@@ -81,22 +95,27 @@ void gen_child(double* child,
 	k *= dimension;
 	parent *= dimension;
 
-	a = 2 * randm();
+	a = 0.01 + 2 * randm();
+
 
 	for (i = 0; i < dimension; ++i) {
 		x = population[parent + i];
 		c = center[i];
 		r = population[k + i];
 
+		// if (randm() < 0.5) {
+		// 	child[i] = x;
+		// 	continue;
+		// }
 		// important mutation
 		child[i] = x + a * (c - r);
 
-		if (fabs(child[i]) > 100) {
-			while (fabs(child[i]) >= 100){
-				child[i] /= 2.0;
-			}
+		while (fabs(child[i]) > 100){
+			child[i] /= 2.0;
 		}
+
 	}
+
 
 }
 
@@ -107,14 +126,23 @@ void show_best(double* population, double* fitness, int pop_size, int dimension)
 			mi = i;
 	}
 
-	printf(">>>>  v = %.8lf \t  mean = %lg \n", fitness[mi], mean(fitness, pop_size));
+	double DTAP_ = diversity(population, pop_size, dimension);
+	double DALL_ = DALL(population, pop_size, dimension);
 
-	mi *= dimension;
-	for (i = 0; i < dimension; ++i) {
-		printf("%lg \t", population[mi + i]);
-	}
+	// printf(">>>>  v = %.8lf \t  mean = %lg \t DTAP = %lf  \t DALL = %lf \n", fitness[mi],
+	// 															   mean(fitness, pop_size),
+	// 															   DTAP_, 
+	// 															   DALL_
+	// 															   );
 
-	printf("\n=================================================\n");
+	// mi *= dimension;
+	// printf("==== soool === \n");
+	// for (i = 0; i < dimension; ++i) {
+	// 	printf("%lg, ", population[mi + i]);
+	// }
+	fprintf(divs, "[%lf, %lf, %.10lf],", DTAP_, DALL_, myError);
+
+	// printf("\n=================================================\n");
 }
 
 void optim(double* population, double* fitness, int pop_size,  int dimension, int func_num, int max_iter) {
@@ -130,9 +158,22 @@ void optim(double* population, double* fitness, int pop_size,  int dimension, in
 	// experimental
 	int saves[pop_size];
 
-	for (t = 0; evals < 10000*dimension; ++t) {
-		printf("\niter = %d \t", t);
-		printf("evals  = %d\n", evals);
+	double best = minimum(fitness, pop_size);
+
+	//////////////////////////////////////
+	//////////////////////////////////////
+	char filename[256];
+	sprintf(filename, "output/diversity_d%d_f%d.txt", dimension, func_num);
+	divs = fopen(filename, "wa") ;
+
+	fprintf(divs, "[\n");
+	//////////////////////////////////////
+	//////////////////////////////////////
+
+	myError = fabs(best - 100*func_num);
+	for (t = 0; myError >= 1e-8 && evals < max_iter; ++t) {
+		// printf("\niter = %d \t", t);
+		// printf("evals  = %d\n", evals);
 		show_best(population, fitness, pop_size, dimension);
 
 		children_counter = 0;
@@ -156,7 +197,7 @@ void optim(double* population, double* fitness, int pop_size,  int dimension, in
 					  i,
 					  pop_size,
 					  SUB_POPULATION,
-					  dimension);
+					  dimension, t);
 
 
 			myfunc(child, fitness_child, dimension, 1, func_num);
@@ -188,8 +229,14 @@ void optim(double* population, double* fitness, int pop_size,  int dimension, in
 			}
 		}
 
+		best = minimum(fitness, pop_size);
+		myError = fabs(best - 100*func_num);
 
 	}
 
+	show_best(population, fitness, pop_size, dimension);
+
+	fprintf(divs, "]\n");
+	fclose(divs);
 
 }
