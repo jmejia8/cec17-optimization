@@ -3,12 +3,11 @@
 #endif
 
 int evals = 0;
-double myError;
 
 void myfunc(double *x, double *f, int nx, int mx, int func_num){
 	// nx; dimesion
 	// mx; pop_size
-	evals++;
+	++evals;
 	cec17_test_func(x, f, nx, mx, func_num);
 }
 
@@ -56,15 +55,19 @@ void my_center(double* center,
 
 	zeros(center, dimension);
 
-	M =  maximum(fitness, pop_size);
-	m =  minimum(fitness, pop_size);
+	// M = 0; //;maximum(fitness, pop_size);
+	// m =  minimum(fitness, pop_size);
+
+	for (int i = 0; i < subpop_size; ++i) {
+		if (M < fitness[sub_population[i]])
+			M = fitness[sub_population[i]];
+	}
+
+	M *= 2;
 
 	for (i = 0; i < subpop_size; ++i) {
-		// a = (fitness[sub_population[i]] - m) / (M - m);
 		a = fitness[sub_population[i]];
 		value = masa(a, m, M);
-		// a = 1. + (double) (order[i]);
-		// value = a;
 
 		mass += value;
 		k     = dimension*sub_population[i];
@@ -103,10 +106,6 @@ void gen_child(double* child,
 		c = center[i];
 		r = population[k + i];
 
-		// if (randm() < 0.5) {
-		// 	child[i] = x;
-		// 	continue;
-		// }
 		// important mutation
 		child[i] = x + a * (c - r);
 
@@ -129,52 +128,98 @@ void show_best(double* population, double* fitness, int pop_size, int dimension)
 	double DTAP_ = diversity(population, pop_size, dimension);
 	double DALL_ = DALL(population, pop_size, dimension);
 
-	// printf(">>>>  v = %.8lf \t  mean = %lg \t DTAP = %lf  \t DALL = %lf \n", fitness[mi],
-	// 															   mean(fitness, pop_size),
-	// 															   DTAP_, 
-	// 															   DALL_
-	// 															   );
+	printf(">>>>  v = %.8lf \t  mean = %lg \t DTAP = %lf  \t DALL = %lf \n", fitness[mi],
+																   mean(fitness, pop_size),
+																   DTAP_, 
+																   DALL_
+																   );
 
 	// mi *= dimension;
 	// printf("==== soool === \n");
 	// for (i = 0; i < dimension; ++i) {
 	// 	printf("%lg, ", population[mi + i]);
 	// }
-	fprintf(divs, "[%lf, %lf, %.10lf],", DTAP_, DALL_, myError);
 
-	// printf("\n=================================================\n");
+	printf("\n=================================================\n");
 }
 
-void optim(double* population, double* fitness, int pop_size,  int dimension, int func_num, int max_iter) {
+
+void replace(double* population,
+			 double* fitness,
+			 int pop_size,
+			 double* children,
+			 double* fit_children,
+			 int children_counter,
+			 int dimension)
+{
+		int i, j, order[pop_size];
+		order_desc(order, fitness, pop_size);
+		for (i = 0; i < children_counter; ++i)
+		{
+			if (fit_children[i] < fitness[order[i]])
+			{
+				for (j = 0; j < dimension; ++j) {
+					population[order[i]*dimension + j] = children[i*dimension + j];
+				}
+
+				fitness[order[i]] = fit_children[i];
+			}
+		}
+}
+
+// experimental
+void replace2(double* population,
+			 double* fitness,
+			 int pop_size,
+			 double* children,
+			 double* fit_children,
+			 int children_counter,
+			 int dimension)
+{
+		int i, j, order[pop_size];
+		order_desc(order, fitness, pop_size);
+		for (i = 0; i < children_counter; ++i)
+		{
+			if (1 || fit_children[i] < fitness[order[i]])
+			{
+				for (j = 0; j < dimension; ++j) {
+					population[order[i]*dimension + j] = children[i*dimension + j];
+				}
+
+				fitness[order[i]] = fit_children[i];
+			}
+		}
+}
+
+void optim(double* population, double* fitness, int pop_size,  int dimension, int func_num, int max_evals, int exec) {
 	int i, j, l, k, t;
 	int sub_population[SUB_POPULATION];
+
+	// Children variables
 	double center[dimension], child[dimension];
 	double fitness_child[1];
-
 	double* children     = allocSperms(dimension, pop_size);
 	double* fit_children = allocSperms(1, pop_size);
 	int children_counter = 0;
 
-	// experimental
-	int saves[pop_size];
 
 	double best = minimum(fitness, pop_size);
+	double freal = 100*func_num;
 
-	//////////////////////////////////////
-	//////////////////////////////////////
-	char filename[256];
-	sprintf(filename, "output/diversity_d%d_f%d.txt", dimension, func_num);
-	divs = fopen(filename, "wa") ;
+	// calculate Error
+	double myError = fabs(best - freal);
 
-	fprintf(divs, "[\n");
-	//////////////////////////////////////
-	//////////////////////////////////////
+	// generation filename
+	char fileName[256];
+	FILE* myFile;
 
-	myError = fabs(best - 100*func_num);
-	for (t = 0; myError >= 1e-8 && evals < max_iter; ++t) {
-		// printf("\niter = %d \t", t);
-		// printf("evals  = %d\n", evals);
-		show_best(population, fitness, pop_size, dimension);
+	for (t = 0; myError >= 1e-8 && evals < max_evals; ++t) {
+		// show_best(population, fitness, pop_size, dimension);
+	
+		// for saving generation
+		sprintf(fileName, "experiments/d%d/fun%d/run%d/generation%d.csv", dimension, func_num, exec, t);
+		myFile = fopen(fileName, "wa");
+		saveGeneration(myFile, population, fitness, pop_size, dimension);
 
 		children_counter = 0;
 
@@ -208,35 +253,29 @@ void optim(double* population, double* fitness, int pop_size,  int dimension, in
 					children[children_counter*dimension + j] = child[j];
 
 				fit_children[children_counter] = fitness_child[0];
-				saves[children_counter] = i;
 				++children_counter;
 			}
 
 		}
 
 		// Replace
-		int order[pop_size];
-		order_desc(order, fitness, pop_size);
-		for (i = 0; i < children_counter; ++i)
-		{
-			if (fit_children[i] < fitness[order[i]])
-			{
-				for (j = 0; j < dimension; ++j) {
-					population[order[i]*dimension + j] = children[i*dimension + j];
-				}
-
-				fitness[order[i]] = fit_children[i];
-			}
-		}
+		replace(population,
+				fitness,
+			 	pop_size,
+				children,
+				fit_children,
+			 	children_counter,
+			 	dimension);
 
 		best = minimum(fitness, pop_size);
-		myError = fabs(best - 100*func_num);
+		myError = fabs(best - freal);
+
+		fclose(myFile);
+
 
 	}
 
-	show_best(population, fitness, pop_size, dimension);
+	// show_best(population, fitness, pop_size, dimension);
 
-	fprintf(divs, "]\n");
-	fclose(divs);
 
 }

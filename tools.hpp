@@ -2,8 +2,6 @@
 	#define RADIUOS 100
 #endif
 
-FILE* divs;
-
 
 double randm() {
     return ( (double) rand() ) / ( (double) RAND_MAX ) ;
@@ -131,21 +129,13 @@ double diversity(double* x, int pop_size, int dimension){
 	for (int i = 0; i < pop_size; ++i) {
 		int index = i * dimension;
 		for (int j = 0; j < dimension; ++j) {
-			// index += j;
 			xmean[j] += x[index + j] ;
 		}
 	}
 
 	for (int i = 0; i < dimension; ++i){
 		xmean[i] /= pop_size;
-		// printf("%lf, ", xmean[i]);
 	}
-
-	// printf("\ndmean = %lf\n", mean(xmean, dimension));
-
-	// printf("\n====================\n");
-
-
 
 	double d = 0;
 
@@ -153,17 +143,12 @@ double diversity(double* x, int pop_size, int dimension){
 		double distance = 0;
 		int index = i * dimension;
 		for (int j = 0; j < dimension; ++j) {
-			// index  j;
 			distance +=  pow(x[index + j] - xmean[j], 2) ;
 		}
 
 		d += sqrt(distance);
 
-		// printf("\n>>> dist%lf\n", sqrt(distance));
 	}
-
-	// printf("\n>>> dist ===  %lf\n", d);
-
 
 	free(xmean);
 
@@ -184,4 +169,28 @@ double DALL(double* x, int pop_size, int dimension){
 	}
 
 	return d /(pop_size * pop_size);
+}
+
+void saveGeneration(FILE* myFile, double* population, double* fitness, int pop_size, int dimension){
+	int i, j,k;
+
+	for (i = 0; i < pop_size; ++i) {
+
+		k = i * dimension;
+		int l = k + dimension;
+		for (j = k; j < l; ++j) {
+			fprintf(myFile, "%.10lf,", population[j]);
+		}
+
+		fprintf(myFile, "%.10lf\n", fitness[i]);
+	}
+}
+
+void createDirectory(char* dirname){
+	struct stat st = {0};
+
+	if (stat("", &st) == -1) {
+		mkdir(dirname, 0777);
+	}
+
 }

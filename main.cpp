@@ -9,6 +9,8 @@
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 #include "cec17_test_func.cpp"
 #include "tools.hpp"
@@ -21,7 +23,7 @@ double *OShift,*M,*y,*z,*x_bound;
 int ini_flag=0,n_flag,func_flag,*SS;
 
 
-int run(int myf, int dimension) 
+int run(int myf, int dimension, int exec) 
 {
 	int i,j,k,n,m,func_num,iter;
 	double *f,*x;
@@ -45,18 +47,8 @@ int run(int myf, int dimension)
 	setSpermsPosition(x, m, n);
 	evaluateSperms(x, f, m, n, func_num);
 
-	// for (int i = 0; i < m; ++i)
-	// {
-	// 	printf("%lg\n ", f[i]);
-	// }
 
-	// printf("\n");
-	// exit(0);
-
-	// return 0;
-	optim(x, f, m, n, func_num, iter);
-	// printSperms(x, f, 10, n);
-	// show_best(x, f, m, n);
+	optim(x, f, m, n, func_num, iter, exec);
 
 
 	free(x);
@@ -76,13 +68,32 @@ int main(int argc, char const *argv[])
 {
 	srand(time(NULL));
 
-	int dimension = 2;
-	int i;
-	for (int i = 1; i <= 30; ++i) {
-		printf("Function = %d \t dimension = %d\n", i, dimension);
-		run(i, dimension);
-		evals = 0;
+	int dimension = 10;
+	
+	int exec, i;
+
+	char dirname[256];
+	
+	sprintf(dirname, "experiments/d%d/", dimension);
+	createDirectory(dirname);
+
+	// function number
+	for (i = 1; i <= 30; ++i) {
+		sprintf(dirname, "experiments/d%d/fun%d", dimension, i);
+		createDirectory(dirname);
 		
+		// execution number
+		for (exec = 0; exec < 51; ++exec) {
+			sprintf(dirname, "experiments/d%d/fun%d/run%d/", dimension, i, exec);
+			createDirectory(dirname);
+		
+			printf("Function = %d \t dimension = %d \t run = %d\n", i, dimension, exec);
+			run(i, dimension, exec);
+			evals = 0;
+			
+		}
+
 	}
+
 	return 0;
 }
