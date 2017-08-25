@@ -1,25 +1,11 @@
-#ifndef SUB_POPULATION
-#define SUB_POPULATION 7
-#endif
+#include "tools.hpp"
 
-int evals = 0;
 
-void myfunc(double *x, double *f, int nx, int mx, int func_num){
+void myfunc(double *x, double *f, int nx, int mx, int func_num, int* evals_ptr){
 	// nx; dimesion
 	// mx; pop_size
-	++evals;
+	*evals_ptr += mx;
 	cec17_test_func(x, f, nx, mx, func_num);
-}
-
-int is_in(int value, int* list, int list_size){
-	int i;
-
-	for (i = 0; i < list_size; ++i) {
-		if (list[i] == value)
-			return 1;
-	}
-
-	return 0;
 }
 
 void gen_subpopulation(int* items, int item_size, int pop_size){
@@ -32,12 +18,7 @@ void gen_subpopulation(int* items, int item_size, int pop_size){
 	}
 }
 
-double masa (double x, double m, double M){
-	// if (abs(M - m) < 1e-8)
-	// 	return randm();
-
-	// return  1 -  (x - m) / (M - m);
-
+double weight (double x, double m, double M){
 	return M - x;
 }
 
@@ -67,7 +48,7 @@ void my_center(double* center,
 
 	for (i = 0; i < subpop_size; ++i) {
 		a = fitness[sub_population[i]];
-		value = masa(a, m, M);
+		value = weight(a, m, M);
 
 		mass += value;
 		k     = dimension*sub_population[i];
@@ -118,31 +99,6 @@ void gen_child(double* child,
 
 }
 
-void show_best(double* population, double* fitness, int pop_size, int dimension){
-	int i, mi = 0;
-	for (int i = 1; i < pop_size; ++i) {
-		if (fitness[i] < fitness[mi])
-			mi = i;
-	}
-
-	double DTAP_ = diversity(population, pop_size, dimension);
-	double DALL_ = DALL(population, pop_size, dimension);
-
-	printf(">>>>  v = %.8lf \t  mean = %lg \t DTAP = %lf  \t DALL = %lf \n", fitness[mi],
-																   mean(fitness, pop_size),
-																   DTAP_, 
-																   DALL_
-																   );
-
-	// mi *= dimension;
-	// printf("==== soool === \n");
-	// for (i = 0; i < dimension; ++i) {
-	// 	printf("%lg, ", population[mi + i]);
-	// }
-
-	printf("\n=================================================\n");
-}
-
 
 void replace(double* population,
 			 double* fitness,
@@ -167,33 +123,10 @@ void replace(double* population,
 		}
 }
 
-// experimental
-void replace2(double* population,
-			 double* fitness,
-			 int pop_size,
-			 double* children,
-			 double* fit_children,
-			 int children_counter,
-			 int dimension)
-{
-		int i, j, order[pop_size];
-		order_desc(order, fitness, pop_size);
-		for (i = 0; i < children_counter; ++i)
-		{
-			if (1 || fit_children[i] < fitness[order[i]])
-			{
-				for (j = 0; j < dimension; ++j) {
-					population[order[i]*dimension + j] = children[i*dimension + j];
-				}
-
-				fitness[order[i]] = fit_children[i];
-			}
-		}
-}
-
-void optim(double* population, double* fitness, int pop_size,  int dimension, int func_num, int max_evals, int exec) {
+void optim(double* population, double* fitness, int pop_size,  int dimension, int func_num, int max_evals, int exec, int* evals_ptr) {
 	int i, j, l, k, t;
 	int sub_population[SUB_POPULATION];
+	int evals = *evals_ptr;
 
 	// Children variables
 	double center[dimension], child[dimension];
@@ -219,7 +152,7 @@ void optim(double* population, double* fitness, int pop_size,  int dimension, in
 		// for saving generation
 		sprintf(fileName, "experiments/d%d/fun%d/run%d/generation%d.csv", dimension, func_num, exec, t);
 		myFile = fopen(fileName, "wa");
-		saveGeneration(myFile, population, fitness, pop_size, dimension);
+		// saveGeneration(myFile, population, fitness, pop_size, dimension);
 
 		children_counter = 0;
 
@@ -245,7 +178,7 @@ void optim(double* population, double* fitness, int pop_size,  int dimension, in
 					  dimension, t);
 
 
-			myfunc(child, fitness_child, dimension, 1, func_num);
+			myfunc(child, fitness_child, dimension, 1, func_num, evals_ptr);
 
 			// save best childrens
 			if (fitness_child[0] <= fitness[i]) {
@@ -270,10 +203,14 @@ void optim(double* population, double* fitness, int pop_size,  int dimension, in
 		best = minimum(fitness, pop_size);
 		myError = fabs(best - freal);
 
+		evals = *evals_ptr;
+
 		fclose(myFile);
 
 
 	}
+
+	printf("error = %1.5le ", myError);
 
 	// show_best(population, fitness, pop_size, dimension);
 

@@ -1,6 +1,27 @@
+#ifndef _HEADER_H_
+#define _HEADER_H_
+
+// #include <WINDOWS.H>    
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <time.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+
+#include "cec17_test_func.cpp"
+
+
 #ifndef RADIUOS
 	#define RADIUOS 100
 #endif
+
+#ifndef SUB_POPULATION
+	#define SUB_POPULATION 7
+#endif
+
+
+void cec17_test_func(double*, double*, int , int ,int);
 
 
 double randm() {
@@ -29,10 +50,12 @@ double setSpermsPosition(double* x, int m, int n){
 		x[i] = -RADIUOS + 2*RADIUOS * randm();
 }
 
-double evaluateSperms(double* x, double* f, int m, int n, int func_num){
-	int i;
-	for (i = 0; i < m*n; ++i)
-		cec17_test_func(x, f, n, m, func_num);
+  double evaluateSperms(double* x, double* f, int m, int n, int func_num, int* evals_ptr){
+	// printf("=============== inicia =================\n");
+	cec17_test_func(x, f, n, m, func_num);
+	// printf("========================================\n");
+	*evals_ptr = m;
+
 }
 
 void printSperms(double* x, double* f, int m, int n){
@@ -85,23 +108,6 @@ double mean(double* data, int data_len){
 	}
 
 	return p /data_len;
-}
-
-void order_desc(int* order, double* data, int data_len){
-	// Ordenamiento para remplazo de padres por hijos 
-	int i, j;
-	for ( i = 0; i < data_len; ++i)
-		order[i] = i;
-
-	for (i = 0; i < data_len - 1; ++i) {
-		for (j = data_len - 1; j > i; --j) {
-			if (data[order[j - 1]] < data[order[j]]){
-				int tmp = order[j];
-				order[j] = order[j - 1];
-				order[j-1] = tmp;
-			}
-		}
-	}
 }
 
 double distance(double* population, int pop_size, int dimension, int x1, int x2){
@@ -194,3 +200,108 @@ void createDirectory(char* dirname){
 	}
 
 }
+
+
+
+// A utility function to swap two elements
+void swap(int* a, int* b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+ 
+void bubbleSort_desc(int* order, double* data, int data_len){
+	// Ordenamiento para remplazo de padres por hijos 
+	int i, j;
+
+	for (i = 0; i < data_len - 1; ++i) {
+		for (j = data_len - 1; j > i; --j) {
+			if (data[order[j - 1]] < data[order[j]])
+				swap(&order[j], &order[j-1]);
+			
+		}
+	}
+}
+
+
+int partition (int* order, double* data, int low, int high) {
+    int pivot = high;    // pivot
+    int i = (low - 1);  // Index of smaller element
+ 
+    for (int j = low; j <= high - 1; ++j) {
+        // If current element is smaller than or
+        // equal to pivot
+        if (data[order[j]] >= data[order[pivot]]) {
+            ++i;    // increment index of smaller element
+            swap(&order[i], &order[j]);
+        }
+    }
+    swap(&order[i + 1], &order[high]);
+    return i + 1;
+}
+ 
+
+void quickSortDesc(int* order, double* data, int low, int high) {
+    if (low < high)
+    {
+        /* pi is partitioning index, order[p] is now
+           at right place */
+        int pi = partition(order, data, low, high);
+ 
+        // Separately sort elements before
+        // partition and after partition
+        quickSortDesc(order, data, low ,   pi - 1);
+        quickSortDesc(order, data, pi + 1, high);
+    }
+}
+
+ void order_desc(int* order, double* data, int data_len){
+	int i;
+	for ( i = 0; i < data_len; ++i)
+		order[i] = i;
+
+	// bubbleSort_desc(order, data, data_len);
+	quickSortDesc(order, data, 0, data_len-1);
+}
+
+
+void show_best(double* population, double* fitness, int pop_size, int dimension){
+	int i, mi = 0;
+	for (int i = 1; i < pop_size; ++i) {
+		if (fitness[i] < fitness[mi])
+			mi = i;
+	}
+
+	double DTAP_ = diversity(population, pop_size, dimension);
+	double DALL_ = DALL(population, pop_size, dimension);
+
+	printf(">>>>  v = %.8lf \t  mean = %lg \t DTAP = %lf  \t DALL = %lf \n", fitness[mi],
+																   mean(fitness, pop_size),
+																   DTAP_, 
+																   DALL_
+																   );
+
+	// mi *= dimension;
+	// printf("==== soool === \n");
+	// for (i = 0; i < dimension; ++i) {
+	// 	printf("%lg, ", population[mi + i]);
+	// }
+
+	printf("\n=================================================\n");
+}
+
+int is_in(int value, int* list, int list_size){
+	int i;
+
+	for (i = 0; i < list_size; ++i) {
+		if (list[i] == value)
+			return 1;
+	}
+
+	return 0;
+}
+
+
+
+
+#endif
