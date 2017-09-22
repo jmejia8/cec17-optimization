@@ -19,7 +19,7 @@ void gen_subpopulation(int* items, int item_size, int pop_size){
 }
 
 double weight (double x, double m, double M){
-	return M - x;
+	return 1.1*M - x;
 }
 
 void my_center(double* center,
@@ -36,15 +36,15 @@ void my_center(double* center,
 
 	zeros(center, dimension);
 
-	// M = 0; //;maximum(fitness, pop_size);
+	M = maximum(fitness, pop_size);
 	// m =  minimum(fitness, pop_size);
 
-	for (int i = 0; i < subpop_size; ++i) {
-		if (M < fitness[sub_population[i]])
-			M = fitness[sub_population[i]];
-	}
+	// for (int i = 0; i < subpop_size; ++i) {
+	// 	if (M < fitness[sub_population[i]])
+	// 		M = fitness[sub_population[i]];
+	// }
 
-	M *= 2;
+	// M *= 2;
 
 	for (i = 0; i < subpop_size; ++i) {
 		a = fitness[sub_population[i]];
@@ -79,7 +79,7 @@ void gen_child(double* child,
 	k *= dimension;
 	parent *= dimension;
 
-	a = 0.01 + 2 * randm();
+	a = 2* randm();
 
 
 	for (i = 0; i < dimension; ++i) {
@@ -92,6 +92,10 @@ void gen_child(double* child,
 
 		while (fabs(child[i]) > 100){
 			child[i] /= 2.0;
+		}
+
+		if (randm() < 0.1) {
+			child[i] = x;
 		}
 
 	}
@@ -181,7 +185,7 @@ void optim(double* population, double* fitness, int pop_size,  int dimension, in
 			myfunc(child, fitness_child, dimension, 1, func_num, evals_ptr);
 
 			// save best childrens
-			if (fitness_child[0] <= fitness[i]) {
+			if (fitness_child[0] < fitness[i]) {
 				for (int j = 0; j < dimension; ++j)
 					children[children_counter*dimension + j] = child[j];
 

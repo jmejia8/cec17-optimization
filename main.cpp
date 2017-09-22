@@ -16,7 +16,7 @@ int run(int myf, int dimension, int exec)
 	n = dimension;
 
 	// population
-	m = SUB_POPULATION * n;
+	m = SUB_POPULATION * 10;
 
 	// iteration number
 	iter = 10000 * n;
@@ -51,7 +51,7 @@ int main(int argc, char const *argv[])
 	srand(time(NULL));
 
 	int dimension = 50;
-	int num_runs = 1;
+	int num_runs = 3;
 	
 	int exec, i;
 
@@ -74,6 +74,8 @@ int main(int argc, char const *argv[])
 			run(i, dimension, exec);
 			
 		}
+
+		printf("=====================================\n");
 
 	}
 
