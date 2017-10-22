@@ -1,8 +1,8 @@
 #include "optim_mass.hpp"
 
 
-double *OShift,*M,*y,*z,*x_bound;
-int ini_flag=0,n_flag,func_flag,*SS;
+// double *OShift,*M,*y,*z,*x_bound;
+// int ini_flag=0,n_flag,func_flag,*SS;
 
 
 int run(int myf, int dimension, int exec) 
@@ -16,7 +16,7 @@ int run(int myf, int dimension, int exec)
 	n = dimension;
 
 	// population
-	m = SUB_POPULATION * 10;
+	m = SUB_POPULATION * n / 2;
 
 	// iteration number
 	iter = 10000 * n;
@@ -28,7 +28,7 @@ int run(int myf, int dimension, int exec)
 	f = allocSperms(m, 1);
 
 	setSpermsPosition(x, m, n);
-	evaluateSperms(x, f, m, n, func_num, &evals);
+	myfuncCOP(x, f, m, n, func_num, &evals);
 
 	optim(x, f, m, n, func_num, iter, exec, &evals);
 	printf(" evals = %d\n", evals);
@@ -50,8 +50,8 @@ int main(int argc, char const *argv[])
 {
 	srand(time(NULL));
 
-	int dimension = 50;
-	int num_runs = 3;
+	int dimension = 10;
+	int num_runs = 5;
 	
 	int exec, i;
 
@@ -61,7 +61,7 @@ int main(int argc, char const *argv[])
 	createDirectory(dirname);
 
 	// function number
-	for (i = 1; i <= 30; ++i) {
+	for (i = 1; i <= 2; ++i) {
 		sprintf(dirname, "experiments/d%d/fun%d", dimension, i);
 		createDirectory(dirname);
 		

@@ -9,7 +9,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#include "cec17_test_func.cpp"
+// #include "cec17_test_func.cpp"
+#include "cec17_test_COP.cpp"
 
 
 #ifndef RADIUOS
@@ -22,6 +23,7 @@
 
 
 void cec17_test_func(double*, double*, int , int ,int);
+void cec17_test_COP(double*, double*,double*,double*, int , int ,int);
 
 
 double randm() {
@@ -52,9 +54,9 @@ double setSpermsPosition(double* x, int m, int n){
 
   double evaluateSperms(double* x, double* f, int m, int n, int func_num, int* evals_ptr){
 	// printf("=============== inicia =================\n");
-	cec17_test_func(x, f, n, m, func_num);
+	// myfuncCOP(x, f, n, m, func_num,*evals_ptr);
 	// printf("========================================\n");
-	*evals_ptr = m;
+	// *evals_ptr = m;
 
 }
 

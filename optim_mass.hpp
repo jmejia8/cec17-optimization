@@ -5,7 +5,46 @@ void myfunc(double *x, double *f, int nx, int mx, int func_num, int* evals_ptr){
 	// nx; dimesion
 	// mx; pop_size
 	*evals_ptr += mx;
-	cec17_test_func(x, f, nx, mx, func_num);
+	// cec17_test_func(x, f, nx, mx, func_num);
+}
+
+void myfuncCOP(double *x, double *F, int mx, int nx, int func_num, int* evals_ptr){
+	// nx; dimesion
+	// mx; pop_size
+	*evals_ptr += mx;
+
+	int ng_A[28]={1,1,1,2,2,1,1,1,1,1,1,2,3,1,1,1,1,2,2,2,2,3,1,1,1,1,2,2};
+	int nh_A[28]={1,1,1,1,1,6,2,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};	
+
+	int gn = ng_A[func_num-1];
+	int hn = nh_A[func_num-1];
+
+
+	double a = 10, b = 10;
+	double* f = allocSperms(mx, 1);
+	double* g = allocSperms(mx * gn, 1);
+	double* h = allocSperms(mx * hn, 1);
+
+	cec17_test_COP(x, f, g, h, nx, mx, func_num);
+
+	int i;
+
+	for (i = 0; i < nx; ++i) {
+		F[i] = f[i];
+
+		int k = i*gn;
+		for (int j = 0; j < gn; ++j) {
+			if(g[k + j] > 0)
+				F[i] += a * g[k + j];
+			
+		}
+
+		k = i*hn;
+		for (int j = 0; j < hn; ++j) {
+			if(abs(h[k + j]) <= 0.0001)
+				F[i] += b * abs(h[k + j]);
+		}
+	}
 }
 
 void gen_subpopulation(int* items, int item_size, int pop_size){
@@ -94,9 +133,9 @@ void gen_child(double* child,
 			child[i] /= 2.0;
 		}
 
-		if (randm() < 0.1) {
-			child[i] = x;
-		}
+		// if (randm() < 0.06) {
+		// 	child[i] = x;
+		// }
 
 	}
 
@@ -150,7 +189,7 @@ void optim(double* population, double* fitness, int pop_size,  int dimension, in
 	char fileName[256];
 	FILE* myFile;
 
-	for (t = 0; myError >= 1e-8 && evals < max_evals; ++t) {
+	for (t = 0; myError > 1e-8 && evals < max_evals; ++t) {
 		// show_best(population, fitness, pop_size, dimension);
 	
 		// for saving generation
